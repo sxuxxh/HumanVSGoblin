@@ -3,7 +3,7 @@
   Human VS Goblin
   Class: Cell
  */
-package game;
+package game.gameboard;
 
 // Individual grid cell
 public class Cell {

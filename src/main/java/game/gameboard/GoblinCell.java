@@ -3,7 +3,7 @@
   Human VS Goblin
   Class: GoblinCell
  */
-package game;
+package game.gameboard;
 
 public class GoblinCell extends Cell{
     // Fields
@@ -47,6 +47,4 @@ public class GoblinCell extends Cell{
                 ", stamina='" + stamina + '\'' +
                 '}';
     }
-
-
 }

@@ -3,7 +3,7 @@
   Human VS Goblin
   Class: HumanCell
  */
-package game;
+package game.gameboard;
 
 public class HumanCell extends Cell{
     // Fields

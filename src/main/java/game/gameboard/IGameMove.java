@@ -3,11 +3,12 @@
   Human VS Goblin
   Interface
  */
-package game;
+package game.gameboard;
 
-public interface GameImplementation {
+public interface IGameMove {
     void moveLeft();
     void moveRight();
     void moveUp();
     void moveDown();
+    void exit();
 }

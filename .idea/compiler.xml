@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Project6" />
+        <module name="human-vs-goblin" />
       </profile>
     </annotationProcessing>
   </component>

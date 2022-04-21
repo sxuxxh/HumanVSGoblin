@@ -3,23 +3,23 @@
   Human VS Goblin
   Class: LandGrid
  */
-package game;
+package game.gameboard;
 
 import javax.swing.*;
 import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
-public class LandGrid extends JPanel implements GameImplementation{
+public class LandGrid extends JPanel implements IGameMove{
     // Fields
-    private int gridCols=50;
-    private int gridRows=28;
-    private int origX=55;
-    private int origY=15;
-    private int cellSize=15;
+    private int gridCols;
+    private int gridRows;
+    private int origX;
+    private int origY;
+    private int cellSize;
 
-    public HumanCell humanCell = new HumanCell(25,27,"HUMAN",100);
-    public GoblinCell goblinCell = new GoblinCell(18,4,100,"Strong");
+    public HumanCell humanCell = new HumanCell(22,27,"HUMAN",100);
+    public GoblinCell goblinCell = new GoblinCell(12,10,100,"Strong");
 
     // Constructors
     public LandGrid() {
@@ -88,7 +88,7 @@ public class LandGrid extends JPanel implements GameImplementation{
                 '}';
     }
 
-    // Method: paint
+    // Method: paint component
     @Override
     protected void paintComponent(Graphics graph) {
         super.paintComponent(graph);
@@ -100,23 +100,34 @@ public class LandGrid extends JPanel implements GameImplementation{
 
     @Override
     public void moveLeft() {
-        humanCell.setCellX(humanCell.getCellX()-1);
+        if (humanCell.getCellX()>=1) { // bounded by landGrid cols range
+            humanCell.setCellX(humanCell.getCellX() - 1);
+        }
     }
 
     @Override
     public void moveRight() {
-        humanCell.setCellX(humanCell.getCellX()+1);
+        if (humanCell.getCellX()<44) { // bounded by landGrid cols range
+            humanCell.setCellX(humanCell.getCellX() + 1);
+        }
     }
 
     @Override
     public void moveUp() {
-        humanCell.setCellY(humanCell.getCellY()-1);
+        if (humanCell.getCellY()>=1) { // bounded by landGrid rows range
+            humanCell.setCellY(humanCell.getCellY() - 1);
+        }
     }
 
     @Override
     public void moveDown() {
-        humanCell.setCellY(humanCell.getCellY()+1);
+        if (humanCell.getCellY()<27) { // bounded by landGrid rows range
+            humanCell.setCellY(humanCell.getCellY() + 1);
+        }
     }
+
+    @Override
+    public void exit() {System.exit(0);}
 
     // Method: draw land grid
     private void drawLandGrid(Graphics2D graph2D) {
