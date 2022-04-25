@@ -1,7 +1,7 @@
 /*
   FSE Cohort - Project6
   Human VS Goblin
-  Class: GoblinCell
+  Class: GoblinCell - child class from Cell
  */
 package game.gameboard;
 

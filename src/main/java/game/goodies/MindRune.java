@@ -1,4 +1,9 @@
-package game.treasures;
+/*
+  FSE Cohort - Project6
+  Human VS Goblin
+  Class: MindRune - child class from Drop, one of a kind dropped by Goblin
+ */
+package game.goodies;
 
 public class MindRune extends Drop {
     // Fields
@@ -9,8 +14,8 @@ public class MindRune extends Drop {
     public MindRune() {
     }
 
-    public MindRune(String name, int age, String origin) {
-        super(name);
+    public MindRune(String name, Scarcity scarcity, int age, String origin) {
+        super(name, scarcity);
         this.age = age;
         this.origin = origin;
     }
@@ -37,7 +42,9 @@ public class MindRune extends Drop {
     @Override
     public String toString() {
         return "MindRune{" +
-                "age=" + age +
+                "name='" + super.getName() + '\'' +
+                ", scarcity='" + super.getScarcity() + '\'' +
+                ", age=" + age +
                 ", origin='" + origin + '\'' +
                 '}';
     }

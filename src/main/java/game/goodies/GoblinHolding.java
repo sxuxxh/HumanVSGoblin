@@ -1,7 +1,10 @@
-package game.treasures;
+/*
+  FSE Cohort - Project6
+  Human VS Goblin
+  Class: GoblinHolding - defines collection of goodies which Goblin can drop
+ */
+package game.goodies;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -37,26 +40,16 @@ public class GoblinHolding {
 
     // Method: populate Goblin holdings
     public void fillGoblinHolding() {
-        ArrayList<Drop> dropLst = new ArrayList<>();
-        Coin goldCoin = new Coin("Gold Coin","1oz","24K");
-        Coin silverCoin = new Coin("Silver Coin","1oz","99.9");
-        ChefHat chefHat1 = new ChefHat("Magic Hat","round","white");
-        ChefHat chefHat2 = new ChefHat("Tall Hat","pointy","black");
-        BronzeBolt bronzeBolt1 = new BronzeBolt("BigBolt","4-in","hex");
-        BronzeBolt bronzeBolt2 = new BronzeBolt("LongBolt","8-in","round");
-        MindRune mindRune1 = new MindRune("Kicker",50,"EastAsia");
-        MindRune mindRune2 = new MindRune("Roller",85,"SouthAmerica");
-        dropLst.add(goldCoin);
-        dropLst.add(silverCoin);
-        dropLst.add(chefHat1);
-        dropLst.add(chefHat2);
-        dropLst.add(bronzeBolt1);
-        dropLst.add(bronzeBolt2);
-        dropLst.add(mindRune1);
-        dropLst.add(mindRune2);
-        for (int i=0; i< dropLst.size(); i++) {
-            this.goblinHoldings.put(i,dropLst.get(i));
-        }
+        this.goblinHoldings.put(1, new Coin("GoldCoin",Scarcity.HIGH,"1oz","24K"));
+        this.goblinHoldings.put(2, new Coin("GoldCoin",Scarcity.HIGH,"2oz","18K"));
+        this.goblinHoldings.put(3, new Coin("SilverCoin",Scarcity.MEDIUM,"1oz","99.9%"));
+        this.goblinHoldings.put(4, new Coin("SilverCoin",Scarcity.MEDIUM,"2oz","96.9%"));
+        this.goblinHoldings.put(5, new ChefHat("MagicHat",Scarcity.LOW,"round","white"));
+        this.goblinHoldings.put(6, new ChefHat("TallHat",Scarcity.LOW,"pointy","black"));
+        this.goblinHoldings.put(7, new BronzeBolt("BigBolt",Scarcity.LOW,"4-in","hex"));
+        this.goblinHoldings.put(8, new BronzeBolt("LongBolt",Scarcity.LOW,"8-in","round"));
+        this.goblinHoldings.put(9, new MindRune("S-Rune",Scarcity.MEDIUM,50,"WestEU"));
+        this.goblinHoldings.put(10, new MindRune("J-Rune",Scarcity.MEDIUM,85,"EastAsia"));
     }
 
     // Method: make a drop
@@ -71,7 +64,7 @@ public class GoblinHolding {
     }
 
     //Method: generate random number as key for a drop
-    private int getRandomInt() {
-        return ThreadLocalRandom.current().nextInt(0, 7);
+    public int getRandomInt() {
+        return ThreadLocalRandom.current().nextInt(1, 10);
     }
 }

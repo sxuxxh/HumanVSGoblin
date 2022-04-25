@@ -1,14 +1,14 @@
 /*
   FSE Cohort - Project6
   Human VS Goblin
-  Class: LandGrid
+  Class: LandGrid - child class from JPanel, defines game land scape and positions
  */
 package game.gameboard;
 
+import game.HumanVSGoblin;
+
 import javax.swing.*;
-import java.awt.Graphics;
-import java.awt.Color;
-import java.awt.Graphics2D;
+import java.awt.*;
 
 public class LandGrid extends JPanel implements IGameMove{
     // Fields
@@ -18,8 +18,9 @@ public class LandGrid extends JPanel implements IGameMove{
     private int origY;
     private int cellSize;
 
-    public HumanCell humanCell = new HumanCell(22,27,"HUMAN",100);
+    public HumanCell humanCell = new HumanCell(20,26,"HUMAN",0);
     public GoblinCell goblinCell = new GoblinCell(12,10,100,"Strong");
+    public GoblinCell goblinCell2 = new GoblinCell(34,7,100,"Strong");
 
     // Constructors
     public LandGrid() {
@@ -34,7 +35,6 @@ public class LandGrid extends JPanel implements IGameMove{
     }
 
     //Setters
-
     public void setGridCols(int gridCols) {
         this.gridCols = gridCols;
     }
@@ -92,9 +92,11 @@ public class LandGrid extends JPanel implements IGameMove{
     @Override
     protected void paintComponent(Graphics graph) {
         super.paintComponent(graph);
+        //graph.drawImage(HumanVSGoblin.imageGameLand, 0, 0, null);
         Graphics2D graph2D = (Graphics2D)graph;
-        drawLandGrid(graph2D);
+        //drawLandGrid(graph2D); //comment to turn off grid
         drawCell(graph2D,goblinCell.getCellX(),goblinCell.getCellY(),"G");
+        drawCell(graph2D,goblinCell2.getCellX(),goblinCell2.getCellY(),"GG");
         drawCell(graph2D,humanCell.getCellX(), humanCell.getCellY(), "H");
     }
 
@@ -107,7 +109,7 @@ public class LandGrid extends JPanel implements IGameMove{
 
     @Override
     public void moveRight() {
-        if (humanCell.getCellX()<44) { // bounded by landGrid cols range
+        if (humanCell.getCellX()<42) { // bounded by landGrid cols range
             humanCell.setCellX(humanCell.getCellX() + 1);
         }
     }
@@ -121,7 +123,7 @@ public class LandGrid extends JPanel implements IGameMove{
 
     @Override
     public void moveDown() {
-        if (humanCell.getCellY()<27) { // bounded by landGrid rows range
+        if (humanCell.getCellY()<26) { // bounded by landGrid rows range
             humanCell.setCellY(humanCell.getCellY() + 1);
         }
     }
@@ -147,11 +149,11 @@ public class LandGrid extends JPanel implements IGameMove{
         int xPosition = origX+x*cellSize;
         int yPosition = origY+y*cellSize;
         if (type.equals("G")) {
-            graph2D.setColor(Color.BLACK);
-            graph2D.fillOval(xPosition, yPosition, cellSize, cellSize);
+            graph2D.drawImage(HumanVSGoblin.imageGoblin,null,xPosition,yPosition);
+        } else if (type.equals("GG")) {
+            graph2D.drawImage(HumanVSGoblin.imageGoblinGreen,null,xPosition,yPosition);
         } else {
-            graph2D.setColor(Color.GREEN);
-            graph2D.fillRoundRect(xPosition,yPosition,cellSize,cellSize,12,12);
+            graph2D.drawImage(HumanVSGoblin.imageHuman,null,xPosition,yPosition);
         }
     }
 }

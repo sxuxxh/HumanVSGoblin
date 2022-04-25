@@ -1,7 +1,7 @@
 /*
   FSE Cohort - Project6
   Human VS Goblin
-  Interface
+  Interface for game moves
  */
 package game.gameboard;
 

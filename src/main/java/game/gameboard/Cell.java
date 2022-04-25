@@ -1,7 +1,7 @@
 /*
   FSE Cohort - Project6
   Human VS Goblin
-  Class: Cell
+  Class: Cell - base class for grid cells
  */
 package game.gameboard;
 

@@ -1,4 +1,9 @@
-package game.treasures;
+/*
+  FSE Cohort - Project6
+  Human VS Goblin
+  Class: Coin - child class from Drop, one of a kind (gold and silver coins) dropped by Goblin
+ */
+package game.goodies;
 
 public class Coin extends Drop {
     // Fields
@@ -9,8 +14,8 @@ public class Coin extends Drop {
     public Coin() {
     }
 
-    public Coin(String name, String weight, String purity) {
-        super(name);
+    public Coin(String name, Scarcity scarcity, String weight, String purity) {
+        super(name, scarcity);
         this.weight = weight;
         this.purity = purity;
     }
@@ -38,7 +43,8 @@ public class Coin extends Drop {
     public String toString() {
         return "Coin{" +
                 "name='" + super.getName() + '\'' +
-                "weight='" + weight + '\'' +
+                ", scarcity='" + super.getScarcity() + '\'' +
+                ", weight='" + weight + '\'' +
                 ", purity='" + purity + '\'' +
                 '}';
     }

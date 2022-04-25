@@ -1,4 +1,9 @@
-package game.treasures;
+/*
+  FSE Cohort - Project6
+  Human VS Goblin
+  Class: BronzeBolt - child class from Drop, one of a kind dropped by Goblin
+ */
+package game.goodies;
 
 public class BronzeBolt extends Drop{
     // Fields
@@ -9,8 +14,8 @@ public class BronzeBolt extends Drop{
     public BronzeBolt() {
     }
 
-    public BronzeBolt(String name, String size, String shape) {
-        super(name);
+    public BronzeBolt(String name, Scarcity scarcity, String size, String shape) {
+        super(name, scarcity);
         this.size = size;
         this.shape = shape;
     }
@@ -37,7 +42,9 @@ public class BronzeBolt extends Drop{
     @Override
     public String toString() {
         return "BronzeBolt{" +
-                "size='" + size + '\'' +
+                "name='" + super.getName() + '\'' +
+                ", scarcity='" + super.getScarcity() + '\'' +
+                ", size='" + size + '\'' +
                 ", shape='" + shape + '\'' +
                 '}';
     }

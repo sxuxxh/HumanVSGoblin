@@ -1,4 +1,9 @@
-package game.treasures;
+/*
+  FSE Cohort - Project6
+  Human VS Goblin
+  Class: ChefHat - child class from Drop, one of a kind dropped by Goblin
+ */
+package game.goodies;
 
 public class ChefHat extends Drop {
     // Fields
@@ -9,8 +14,8 @@ public class ChefHat extends Drop {
     public ChefHat() {
     }
 
-    public ChefHat(String name, String style, String color) {
-        super(name);
+    public ChefHat(String name, Scarcity scarcity, String style, String color) {
+        super(name, scarcity);
         this.style = style;
         this.color = color;
     }
@@ -37,7 +42,9 @@ public class ChefHat extends Drop {
     @Override
     public String toString() {
         return "ChefHat{" +
-                "style='" + style + '\'' +
+                "name='" + super.getName() + '\'' +
+                ", scarcity='" + super.getScarcity() + '\'' +
+                ", style='" + style + '\'' +
                 ", color='" + color + '\'' +
                 '}';
     }
