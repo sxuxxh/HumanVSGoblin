@@ -1,7 +1,7 @@
 /*
   FSE Cohort - Project6
   Human VS Goblin
-  Class: LandGrid - child class from JPanel, defines game land scape and positions
+  Class: LandGrid - child class from JPanel, defines game land scape, human and goblins positions
  */
 package game.gameboard;
 

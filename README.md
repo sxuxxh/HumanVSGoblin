@@ -1,11 +1,11 @@
 # HumanVSGoblin
-Human (Green Round Square Cell) pursues Goblin(Black Circle Cell) for Drops
+Human pursues Goblins for Drops
 
 ## Game Features
 ### JFrame, JPanel, JButtons for game UI
 ### InfoPanel for game messages and info disclosure
-### human player moves to catch Goblin for goody drops, gets a surprised prize for every 3 drops gained
-### Goblin runs away to a random location after each drop
+### human player moves to catch Goblins for goody drops, gets a surprised prize for every 3 drops gained
+### Goblin runs away to a random location in game grid/panel after each drop
 ### human player shows detailed goodies gained in goodybag, also shows health points
 
 ## Console Run CMD/Procedure

@@ -3,7 +3,7 @@
   Human VS Goblin
   Main Class: game.HumanVSGoblin
 
-  - Human (Green Round Square Cell) pursues Goblin(Black Circle Cell) for goody drops
+  - Human pursues Goblins for goody drops
   - Watch messages in info panel for goody drops, human health and surprised prizes
   - Click "EXIT" button to exit game
  */
